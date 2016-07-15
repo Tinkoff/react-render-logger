@@ -1,0 +1,29 @@
+language: node_js
+
+node_js:
+  - "stable"
+  - 5
+  - 4
+
+sudo: false
+
+before_script:
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+
+script:
+  - npm run lint
+  - npm run test
+
+branches:
+  only:
+    - master
+
+notifications:
+  slack:
+    rooms:
+      - csssr:YXZaaBztbAwFtng2CecfzWWH#react-render-logger
+
+cache:
+  directories:
+    - node_modules

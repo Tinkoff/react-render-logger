@@ -1,0 +1,63 @@
+{
+  "extends": "eslint-config-airbnb-base",
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "node": true,
+    "mocha": true
+  },
+  "globals": {
+    "sinon": true
+  },
+  "rules": {
+    "one-var": [
+      "error",
+      "always"
+    ],
+    "semi": [
+      "error",
+      "never"
+    ],
+    "comma-dangle": [
+      "error",
+      "never"
+    ],
+    "no-console": 0,
+    "no-use-before-define": [
+      "error",
+      {
+        "functions": false
+      }
+    ],
+    "no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_"
+      }
+    ],
+    "no-underscore-dangle": [
+      0
+    ],
+    "no-confusing-arrow": [
+      0
+    ],
+    "no-class-assign": [
+      0
+    ],
+    "no-param-reassign": [
+      "error",
+      {
+        "props": false
+      }
+    ],
+    "max-len": [
+      "error",
+      {
+        "code": 180,
+        "ignorePattern": "^test",
+        "ignoreUrls": true
+      }
+    ],
+    "import/no-extraneous-dependencies": 0
+  }
+}
