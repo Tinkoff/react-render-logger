@@ -35,6 +35,9 @@ const
         return `${path.join('.')}`
       case 'A':
         return (`${path.join('.')}[${index}]`, item)
+      /* istanbul ignore next */
+      default:
+        return null
     }
   },
   renderDiff = elem => {
