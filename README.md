@@ -1,4 +1,4 @@
-# react-render-logger
+# react-render-logger [![Build Status](https://travis-ci.org/TinkoffCreditSystems/react-render-logger.svg?branch=master)](https://travis-ci.org/TinkoffCreditSystems/react-render-logger)
 
 Simple util for log component updates. 
 Possible reasons to use find way for eliminate unnecessary component updates after performance bottleneck are located via `react-addons-perf` or other instruments.
