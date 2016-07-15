@@ -3,7 +3,7 @@ import now from 'performance-now'
 import chainMethod from './chainMethod'
 
 const
-  isDevelopment = process.env.NODE_ENV !== 'production',
+  isDevelopment = () => process.env.NODE_ENV !== 'production',
   dictionary = {
     E: {
       color: '#2196F3',
@@ -35,6 +35,7 @@ const
         return `${path.join('.')}`
       case 'A':
         return (`${path.join('.')}[${index}]`, item)
+      /* istanbul ignore next */
       default:
         return null
     }
@@ -71,7 +72,7 @@ const
    */
   createLogger =
     enabled => target => {
-      if (!isDevelopment) {
+      if (!isDevelopment()) {
         return target
       }
       const
@@ -86,7 +87,7 @@ const
         }
 
       function logger(nextProps, nextState) {
-        if (enabled(groupName) || enabled(traceGroupName)) {
+        if (enabled(traceGroupName) || enabled(groupName)) {
           const
             startTime = now(),
             time = new Date(),
