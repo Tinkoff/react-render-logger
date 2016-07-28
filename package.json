@@ -1,14 +1,14 @@
 {
   "name": "react-render-logger",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Decorator for log react component updates",
   "main": "./lib/index.js",
   "scripts": {
-    "build": "npm run clean && babel src --out-dir lib --ignore *.test.js",
+    "build": "cross-env NODE_ENV=production npm run clean && babel src --out-dir lib --ignore *.test.js",
     "clean": "rimraf lib",
     "lint": "eslint src",
     "prepublish": "npm run lint && npm run test && npm run build",
-    "test": "nyc mocha --compilers js:babel-register src/**/*.test.js",
+    "test": "cross-env NODE_ENV=test nyc mocha --compilers js:babel-register src/**/*.test.js",
     "test:watch": "nyc mocha --compilers js:babel-register src/**/*.test.js --watch"
   },
   "repository": {
@@ -53,6 +53,7 @@
     "babel-preset-stage-0": "^6.5.0",
     "babel-register": "^6.9.0",
     "chai": "^3.5.0",
+    "cross-env": "^2.0.0",
     "eslint": "^3.0.1",
     "eslint-config-airbnb-base": "^4.0.0",
     "eslint-plugin-import": "^1.10.2",
